@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录-史上最简单的SpringSecurity教程</title>
+</head>
+<body align="center">
+    <form action="/login" method="post" th:action="@{/login}" th:method="post">
+        <div>
+            <input type="text" name="username" placeholder="用户名">
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="密码">
+        </div>
+        <button type="submit">登录</button>
+    </form>
+</body>
+</html>
