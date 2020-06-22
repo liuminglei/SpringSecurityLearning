@@ -36,7 +36,10 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .formLogin().loginPage("/login").successHandler(customAuthenticationSuccessHandler()).permitAll()
+                .formLogin()
+                .loginPage("/login")
+                .successHandler(customAuthenticationSuccessHandler())
+                .permitAll()
                 .and()
                 .authorizeRequests()
                 .anyRequest()
@@ -47,6 +50,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthenticationSuccessHandler customAuthenticationSuccessHandler() {
         CustomSavedRequestAwareAuthenticationSuccessHandler customSavedRequestAwareAuthenticationSuccessHandler = new CustomSavedRequestAwareAuthenticationSuccessHandler();
+        customSavedRequestAwareAuthenticationSuccessHandler.setDefaultTargetUrl("/index");
         customSavedRequestAwareAuthenticationSuccessHandler.setEmailService(emailService);
         customSavedRequestAwareAuthenticationSuccessHandler.setSmsService(smsService);
         customSavedRequestAwareAuthenticationSuccessHandler.setWeChatService(wechatService);
