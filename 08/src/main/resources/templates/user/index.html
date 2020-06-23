@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心-史上最简单的SpringSecurity教程</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}" href="../../static/css/font-awesome.min.css">
+    <style>
+        body {
+            padding-bottom: 20px;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+            <a class="navbar-brand" href="#">导航</a>
+            <div class="collapse navbar-collapse" id="navbarsExample09">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html" th:href="@{/index}">首页 <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">个人中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">人员管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">权限管理</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">系统配置</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <a class="dropdown-item" href="#">功能菜单</a>
+                            <a class="dropdown-item" href="#">功能菜单2</a>
+                            <a class="dropdown-item" href="#">功能菜单3</a>
+                        </div>
+                    </li>
+                </ul>
+                <a href="../logout_success.html" th:href="@{/logout}" class="btn btn-link"><i class="fa fa-user-circle-o"></i> 退出登录</a>
+            </div>
+        </nav>
+        <div class="container mt-2">
+            <form class="form">
+                <div class="form-group row">
+                    <label class="col-sm-4 pull-right">姓名</label>
+                    <div class="col-sm-6 pull-left" th:text="${#authentication.name}">admin</div>
+                    <div class="col-sm-2"></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 pull-right">日期</label>
+                    <div class="col-sm-6 pull-left" th:text="${#temporals.format(#temporals.createToday(), 'yyyy年MM月dd E', 'zh_CN')}">2020年06月18日 星期四</div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="blockquote-footer text-center mt-lg-auto">
+        <div class="inner">
+            <p>源码来自于 <a href="https://gitee.com/xbd521/SpringSecurityLearning">gitee</a>、<a href="https://github.com/liuminglei/SpringSecurityLearning">github</a>， by <a href="https://blog.csdn.net/liuminglei1987">@银河架构师</a>.</p>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}" src="../../static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="../../static/js/bootstrap.min.js"></script>
+</html>
