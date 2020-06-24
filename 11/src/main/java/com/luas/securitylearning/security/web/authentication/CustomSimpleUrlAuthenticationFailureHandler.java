@@ -1,5 +1,6 @@
 package com.luas.securitylearning.security.web.authentication;
 
+import com.luas.securitylearning.security.web.LoginError;
 import com.luas.securitylearning.service.EmailService;
 import com.luas.securitylearning.service.SmsService;
 import com.luas.securitylearning.service.WeChatService;
@@ -59,13 +60,13 @@ public class CustomSimpleUrlAuthenticationFailureHandler extends SimpleUrlAuthen
         String error = null;
 
         if (exception instanceof BadCredentialsException) {
-            error = "error=1";
+            error = "error=" + LoginError.BADCREDENTIALS.getType();
         } else if (exception instanceof LockedException) {
-            error = "error=2";
+            error = "error=" + LoginError.LOCKED.getType();
         } else if (exception instanceof AccountExpiredException) {
-            error = "error=3";
+            error = "error=" + LoginError.ACCOUNTEXPIRED.getType();
         } else if (exception instanceof UsernameNotFoundException) {
-            error = "error=4";
+            error = "error=" + LoginError.USERNAMENOTFOUND.getType();
         }
 
         if (StringUtils.hasLength(error)) {

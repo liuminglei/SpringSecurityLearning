@@ -1,5 +1,6 @@
 package com.luas.securitylearning.config;
 
+import com.luas.securitylearning.security.web.LoginError;
 import com.luas.securitylearning.security.web.authentication.CustomSimpleUrlAuthenticationFailureHandler;
 import com.luas.securitylearning.service.EmailService;
 import com.luas.securitylearning.service.SmsService;
@@ -81,10 +82,10 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private Map<String, String> buildExceptionMappings() {
         Map<String, String> urlMappings = new HashMap<>();
-        urlMappings.put(BadCredentialsException.class.getName(), "/login_fail?error=1");
-        urlMappings.put(LockedException.class.getName(), "/login_fail?error=2");
-        urlMappings.put(AccountExpiredException.class.getName(), "/login_fail?error=3");
-        urlMappings.put(UsernameNotFoundException.class.getName(), "/login_fail?error=4");
+        urlMappings.put(BadCredentialsException.class.getName(), "/login_fail?error=" + LoginError.BADCREDENTIALS.getType());
+        urlMappings.put(LockedException.class.getName(), "/login_fail?error=" + LoginError.LOCKED.getType());
+        urlMappings.put(AccountExpiredException.class.getName(), "/login_fail?error=" + LoginError.ACCOUNTEXPIRED.getType());
+        urlMappings.put(UsernameNotFoundException.class.getName(), "/login_fail?error=" + LoginError.USERNAMENOTFOUND.getType());
         return urlMappings;
     }
 
