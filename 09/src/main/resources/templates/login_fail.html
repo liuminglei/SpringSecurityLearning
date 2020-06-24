@@ -11,7 +11,8 @@
     <div class="container">
         <main role="main">
             <div class="jumbotron">
-                <div class="col-sm-12 mx-auto text-center">
+                <div class="col-sm-12 mx-auto text-center" th:with="exp=${#request.session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION')}">
+                    <p th:if="${exp}" th:text="${exp.message}" class="text-danger font-size-x-small">1122</p>
                     <p>登录失败，请<a href="login.html" th:href="@{/login}">重新登录</a>。</p>
                 </div>
             </div>
