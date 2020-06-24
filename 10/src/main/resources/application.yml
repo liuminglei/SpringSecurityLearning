@@ -1,0 +1,12 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /springsecuritylearning
+
+
+spring:
+  security:
+    user:
+      name: zhangsan
+      password: 123456
+
