@@ -26,8 +26,17 @@ public class LoginController {
 
     @RequestMapping("/login_fail")
     public String loginFail(HttpServletRequest request, Model model) {
+        LoginError loginError = determineErrorType(request);
+
+        model.addAttribute("errorMessage", loginError != null ? loginError.getMessage() : null);
 
         return "login_fail";
+    }
+
+    private LoginError determineErrorType(HttpServletRequest request) {
+        String typeStr = request.getParameter("error");
+
+        return typeStr == null ? null : LoginError.resolve(Integer.valueOf(typeStr));
     }
 
 }

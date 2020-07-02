@@ -37,7 +37,7 @@ public class CustomSimpleUrlAuthenticationFailureHandler extends SimpleUrlAuthen
 
         super.onAuthenticationFailure(request, response, exception);
 
-        this.logger.info(String.format("IP %s 于 %s 尝试登录系统失败，失败原因：%s", request.getRemoteHost(), LocalDateTime.now(), exception.getMessage()));
+        this.logger.info(String.format("IP %s 于 %s 尝试登录系统失败，失败原因：%s", request.getRemoteHost(), LocalDateTime.now(), determineFailureType(exception).getMessage()));
 
         try {
             // 发邮件
@@ -57,23 +57,27 @@ public class CustomSimpleUrlAuthenticationFailureHandler extends SimpleUrlAuthen
         // 默认设置登录错误页面为/login_fail
         defaultFailureUrl = StringUtils.hasLength(defaultFailureUrl) ? defaultFailureUrl : DEFAULT_FAILURE_URL;
 
-        String error = null;
+        Integer failureType = determineFailureType(exception).getType();
 
-        if (exception instanceof BadCredentialsException) {
-            error = "error=" + LoginError.BADCREDENTIALS.getType();
-        } else if (exception instanceof LockedException) {
-            error = "error=" + LoginError.LOCKED.getType();
-        } else if (exception instanceof AccountExpiredException) {
-            error = "error=" + LoginError.ACCOUNTEXPIRED.getType();
-        } else if (exception instanceof UsernameNotFoundException) {
-            error = "error=" + LoginError.USERNAMENOTFOUND.getType();
-        }
-
-        if (StringUtils.hasLength(error)) {
-            defaultFailureUrl += defaultFailureUrl.lastIndexOf("?") > 0 ? "&" : "?" + error;
+        if (failureType != null) {
+            defaultFailureUrl += defaultFailureUrl.lastIndexOf("?") > 0 ? "&" : "?" + "error=" + failureType;
         }
 
         return defaultFailureUrl;
+    }
+
+    private LoginError determineFailureType(AuthenticationException exception) {
+        if (exception instanceof BadCredentialsException) {
+            return LoginError.BADCREDENTIALS;
+        } else if (exception instanceof LockedException) {
+            return LoginError.LOCKED;
+        } else if (exception instanceof AccountExpiredException) {
+            return LoginError.ACCOUNTEXPIRED;
+        } else if (exception instanceof UsernameNotFoundException) {
+            return LoginError.USERNAMENOTFOUND;
+        }
+
+        return LoginError.FAILURE;
     }
 
     @Override

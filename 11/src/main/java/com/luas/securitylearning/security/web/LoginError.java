@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum LoginError {
+    FAILURE(0, "登录失败！"),
 
     BADCREDENTIALS(1, "用户名密码错误！"),
 
@@ -20,6 +21,7 @@ public enum LoginError {
     private final static Map<Integer, LoginError> mappings = new HashMap<>();
 
     static {
+        mappings.put(FAILURE.type, FAILURE);
         mappings.put(BADCREDENTIALS.type, BADCREDENTIALS);
         mappings.put(LOCKED.type, BADCREDENTIALS);
         mappings.put(ACCOUNTEXPIRED.type, BADCREDENTIALS);
@@ -27,26 +29,14 @@ public enum LoginError {
 
     }
 
-    public static boolean support(Integer type) {
-        if (type == null) {
-            return false;
-        }
-
-        return mappings.get(type) != null;
-    }
-
     public static LoginError resolve(Integer type) {
-        if (type == null) {
-            throw new IllegalArgumentException("不支持" + type + "类型！");
-        }
-
-        return mappings.get(type);
+        return type != null ? mappings.get(type) : null;
     }
 
     public static String getMessage(Integer type) {
         LoginError loginError = resolve(type);
 
-        return loginError.message;
+        return loginError != null ? loginError.message : null;
     }
 
     LoginError(Integer type, String message) {
