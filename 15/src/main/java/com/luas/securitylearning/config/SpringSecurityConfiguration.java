@@ -69,7 +69,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
         ;
 
-        http.addFilterAfter(customFilterSecurityInterceptor(), FilterSecurityInterceptor.class);
+        http.addFilterBefore(customFilterSecurityInterceptor(), FilterSecurityInterceptor.class);
     }
 
     @Override
