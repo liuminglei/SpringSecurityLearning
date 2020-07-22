@@ -129,20 +129,29 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
             return new LinkedHashMap<>();
         }
 
-        LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>> requestMap = new LinkedHashMap<>();
+        Map<String, Set<String>> urlRoleMap = new HashMap<>();
 
         for (SysFuncRole sysFuncRole : sysFuncRoles) {
-            Collection<ConfigAttribute> configAttributes = requestMap.get(sysFuncRole.getFuncId());
+            String url = determineAntUrl(sysFuncRole.getUrl());
+
+            Set<String> configAttributes = urlRoleMap.get(url);
 
             if (configAttributes == null) {
                 configAttributes = new HashSet<>();
             }
 
-            // 注意此处，我们设置ConfigAttribute为 ROLE_ 前缀加上角色标识，与 CustomJdbcUserDetailsService 里面组织UserDetails设置角色标识呼应
-            configAttributes.add(new SecurityConfig("ROLE_" + sysFuncRole.getRoleCode()));
-            requestMap.put(new AntPathRequestMatcher(determineAntUrl(sysFuncRole.getUrl())), configAttributes);
+            configAttributes.add(sysFuncRole.getRoleCode());
+            urlRoleMap.put(url, configAttributes);
         }
 
+        LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>> requestMap = new LinkedHashMap<>();
+
+        for(String url : urlRoleMap.keySet()) {
+            Set<String> needRoles = urlRoleMap.get(url);
+
+            // 注意此处，我们设置ConfigAttribute为 ROLE_ 前缀加上角色标识，与 CustomJdbcUserDetailsService 里面组织UserDetails设置角色标识呼应
+            requestMap.put(new AntPathRequestMatcher(url), needRoles.stream().map(role -> new SecurityConfig("ROLE_" + role)).collect(Collectors.toSet()));
+        }
 
         return requestMap;
     }
