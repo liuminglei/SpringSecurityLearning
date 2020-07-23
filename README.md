@@ -11,7 +11,7 @@ Spring Security框架，说实话，比较复杂，好多人一开始不太理�
 
 另外，本系列计划分别以SpringBoot、SpringMVC两种不同的版本进行讲解，目前讲解的是SpringBoot版本，更适合于目前技术开发环境，毕竟新产品还在用SpringMVC的已经很少了。但是，后续也会陆续出一些对应的SpringMVC版本的文章，敬请期待吧！！！
 
-本系列源码：gitee：https://gitee.com/xbd521/SpringSecurityLearning，github：https://github.com/liuminglei/SpringSecurityLearning，不要忘了点赞支持哦，感谢感谢！！！
+本系列源码：gitee：https://gitee.com/xbd521/SpringSecurityLearning，github：https://github.com/liuminglei/SpringSecurityLearning， 不要忘了点赞支持哦，感谢感谢！！！
 
 
 汇总文章：[史上最简单的Spring Security教程：终极篇，注意，这不是重点，不是最后一篇！！！](https://blog.csdn.net/liuminglei1987/article/details/107538666)
