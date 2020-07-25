@@ -4,6 +4,7 @@ import com.luas.securitylearning.dao.FuncDao;
 import com.luas.securitylearning.dao.RoleDao;
 import com.luas.securitylearning.dao.UserDao;
 import com.luas.securitylearning.domain.po.SysFuncRole;
+import com.luas.securitylearning.security.access.vote.AllMatchRoleVoter;
 import com.luas.securitylearning.security.core.userdetails.jdbc.CustomJdbcUserDetailsService;
 
 import com.luas.securitylearning.security.web.access.intercept.CustomFilterSecurityInterceptor;
@@ -14,9 +15,6 @@ import org.springframework.security.access.AccessDecisionVoter;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.access.vote.AffirmativeBased;
-import org.springframework.security.access.vote.ConsensusBased;
-import org.springframework.security.access.vote.RoleVoter;
-import org.springframework.security.access.vote.UnanimousBased;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -97,7 +95,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private AccessDecisionManager accessDecisionManager() {
         List<AccessDecisionVoter<? extends Object>> voters = new ArrayList<>();
-        voters.add(new RoleVoter());
+        voters.add(new AllMatchRoleVoter());
 
         return new AffirmativeBased(voters);
     }

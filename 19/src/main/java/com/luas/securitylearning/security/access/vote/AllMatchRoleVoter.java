@@ -7,7 +7,11 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
-public class WholeRoleVoter extends RoleVoter {
+/**
+ * Votes to grant access if all the <code>GrantedAuthority</code> matching to the all
+ * <code>ConfigAttribute</code> starting with the role prefix.
+ */
+public class AllMatchRoleVoter extends RoleVoter {
 
     @Override
     public int vote(Authentication authentication, Object object, Collection<ConfigAttribute> attributes) {
@@ -20,13 +24,18 @@ public class WholeRoleVoter extends RoleVoter {
 
         for (ConfigAttribute attribute : attributes) {
             if (this.supports(attribute)) {
-                result = ACCESS_GRANTED;
+                result = ACCESS_DENIED;
 
-                // Attempt to find a matching granted authority
+                // Attempt to find all matching granted authority
                 for (GrantedAuthority authority : authorities) {
-                    if (!attribute.getAttribute().equals(authority.getAuthority())) {
-                        return ACCESS_DENIED;
+                    if (attribute.getAttribute().equals(authority.getAuthority())) {
+                        result = ACCESS_GRANTED;
+                        break;
                     }
+                }
+
+                if (result == ACCESS_DENIED) {
+                    return ACCESS_DENIED;
                 }
             }
         }
