@@ -21,8 +21,10 @@ Spring Security框架，说实话，比较复杂，好多人一开始不太理�
 # SpringBoot版本：
 
 * [未完待续......]
-* [史上最简单的Spring Security教程（十三）：动态用户](https://blog.csdn.net/liuminglei1987/article/details/107537338)
-* [史上最简单的Spring Security教程（十二）：注解实现权限控制](https://blog.csdn.net/liuminglei1987/article/details/107413061)
+* [史上最简单的Spring Security教程（十五）：资源权限动态控制（FilterSecurityInterceptor）](https://blog.csdn.net/liuminglei1987/article/details/107606012)
+* [史上最简单的Spring Security教程（十四）：动态权限（自定义UserDetailsService）](https://blog.csdn.net/liuminglei1987/article/details/107605953)
+* [史上最简单的Spring Security教程（十三）：动态用户（自定义UserDetailsService）](https://blog.csdn.net/liuminglei1987/article/details/107537338)
+* [史上最简单的Spring Security教程（十二）：@PreAuthorize注解实现权限控制](https://blog.csdn.net/liuminglei1987/article/details/107413061)
 * [史上最简单的Spring Security教程（十一）：url区分不同的登录失败场景](https://blog.csdn.net/liuminglei1987/article/details/107363408)
 * [史上最简单的Spring Security教程（十）：AuthenticationFailureHandler高级用法](https://blog.csdn.net/liuminglei1987/article/details/107181973)
 * [史上最简单的Spring Security教程（九）：自定义用户登录失败页面](https://blog.csdn.net/liuminglei1987/article/details/107107782)
