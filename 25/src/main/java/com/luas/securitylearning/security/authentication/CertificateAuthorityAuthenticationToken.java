@@ -16,8 +16,6 @@ public class CertificateAuthorityAuthenticationToken extends AbstractAuthenticat
 
     private final Object principal;
 
-    private Object credentials;
-
     // ~ Constructors
     // ===================================================================================================
 
@@ -27,10 +25,9 @@ public class CertificateAuthorityAuthenticationToken extends AbstractAuthenticat
      * will return <code>false</code>.
      *
      */
-    public CertificateAuthorityAuthenticationToken(Object principal, Object credentials) {
+    public CertificateAuthorityAuthenticationToken(Object principal) {
         super(null);
         this.principal = principal;
-        this.credentials = credentials;
         setAuthenticated(false);
     }
 
@@ -43,10 +40,9 @@ public class CertificateAuthorityAuthenticationToken extends AbstractAuthenticat
      * @param principal
      * @param authorities
      */
-    public CertificateAuthorityAuthenticationToken(Object principal, Object credentials, Collection<? extends GrantedAuthority> authorities) {
+    public CertificateAuthorityAuthenticationToken(Object principal, Collection<? extends GrantedAuthority> authorities) {
         super(authorities);
         this.principal = principal;
-        this.credentials = credentials;
         super.setAuthenticated(true); // must use super, as we override
     }
 
@@ -55,7 +51,7 @@ public class CertificateAuthorityAuthenticationToken extends AbstractAuthenticat
     // ========================================================================================================
 
     public Object getCredentials() {
-        return this.credentials;
+        return null;
     }
 
     public Object getPrincipal() {
@@ -71,9 +67,4 @@ public class CertificateAuthorityAuthenticationToken extends AbstractAuthenticat
         super.setAuthenticated(false);
     }
 
-    @Override
-    public void eraseCredentials() {
-        super.eraseCredentials();
-        credentials = null;
-    }
 }
