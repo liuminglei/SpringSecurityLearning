@@ -21,6 +21,15 @@ Spring Security框架，说实话，比较复杂，好多人一开始不太理�
 # SpringBoot版本：
 
 * [未完待续......]
+* [史上最简单的Spring Security教程（二十四）：自定义用户名密码参数名及用户名密码验证路径](https://blog.csdn.net/liuminglei1987/article/details/108194357)
+* [史上最简单的Spring Security教程（二十三）：自定义AccessDecisionManager实现类选举法的访问决策](https://blog.csdn.net/liuminglei1987/article/details/108194162)
+* [史上最简单的Spring Security教程（二十二）：自定义AccessDecisionManager实现简单的访问决策](https://blog.csdn.net/liuminglei1987/article/details/108099022)
+* [史上最简单的Spring Security教程（二十一）：AccessDecisionManager简介及自定义访问决策管理器](https://blog.csdn.net/liuminglei1987/article/details/107904526)
+* [史上最简单的Spring Security教程（二十）：自定义AccessDecisionVoter实现必须全部拥有请求所需权限才可访问的需求](https://blog.csdn.net/liuminglei1987/article/details/107861483)
+* [史上最简单的Spring Security教程（十九）：AccessDecisionVoter简介及自定义访问权限投票器](https://blog.csdn.net/liuminglei1987/article/details/107861391)
+* [史上最简单的Spring Security教程（十八）：FilterSecurityInterceptor实现每个请求只处理一次](https://blog.csdn.net/liuminglei1987/article/details/107806965)
+* [史上最简单的Spring Security教程（十七）：FilterSecurityInterceptor默认初始化逻辑剖析](https://blog.csdn.net/liuminglei1987/article/details/107806834)
+* [史上最简单的Spring Security教程（十六）：FilterSecurityInterceptor详解](https://blog.csdn.net/liuminglei1987/article/details/107662200)
 * [史上最简单的Spring Security教程（十五）：资源权限动态控制（FilterSecurityInterceptor）](https://blog.csdn.net/liuminglei1987/article/details/107606012)
 * [史上最简单的Spring Security教程（十四）：动态权限（自定义UserDetailsService）](https://blog.csdn.net/liuminglei1987/article/details/107605953)
 * [史上最简单的Spring Security教程（十三）：动态用户（自定义UserDetailsService）](https://blog.csdn.net/liuminglei1987/article/details/107537338)
