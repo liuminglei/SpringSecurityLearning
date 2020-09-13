@@ -1,4 +1,4 @@
-package com.luas.securitylearning.security.core.userdetails;
+package com.luas.securitylearning.security.authentication.dao;
 
 import com.luas.securitylearning.security.authentication.CertificateAuthorityAuthenticationToken;
 import com.luas.securitylearning.security.authentication.dao.AbstractCertificateAuthorityUserDetailsAuthenticationProvider;

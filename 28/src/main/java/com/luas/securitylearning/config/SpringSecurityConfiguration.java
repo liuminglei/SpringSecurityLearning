@@ -5,7 +5,7 @@ import com.luas.securitylearning.dao.RoleDao;
 import com.luas.securitylearning.dao.UserDao;
 import com.luas.securitylearning.domain.po.SysFuncRole;
 import com.luas.securitylearning.security.access.vote.MoreThanHalfBased;
-import com.luas.securitylearning.security.core.userdetails.CertificateAuthorityDaoAuthenticationProvider;
+import com.luas.securitylearning.security.authentication.dao.CertificateAuthorityDaoAuthenticationProvider;
 import com.luas.securitylearning.security.core.userdetails.jdbc.CertificateAuthorityJdbcUserDetailsService;
 import com.luas.securitylearning.security.core.userdetails.jdbc.CustomJdbcUserDetailsService;
 
@@ -17,7 +17,6 @@ import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDecisionVoter;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
-import org.springframework.security.access.vote.AffirmativeBased;
 import org.springframework.security.access.vote.RoleVoter;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
