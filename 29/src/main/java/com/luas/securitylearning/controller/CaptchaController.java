@@ -28,16 +28,17 @@ public class CaptchaController {
         try {
             ServletOutputStream outputStream = response.getOutputStream();
 
-            //图形验证码写出：可以写出到流，也可以写出到文件如captchaa.write("d:/circle_captcha.jpeg");
+            // 图形验证码写出既输出到流，当然也可以输出到文件，如captcha.write("d:/circle_captcha.jpeg");
             captcha.write(outputStream);
 
-            //从带有圆圈类型的图形验证码图片中获取它的字符串验证码(获取字符串验证码要在图形验证码写出wirte后面才行，不然得到的值为null)
-            String code = captcha.getCode();
+            // 从带有圆圈类型的图形验证码图片中获取其中的字符串验证码
+            // 注意，获取字符串验证码要在图形验证码write后，不然得到的值为null
+            String captchaCode = captcha.getCode();
 
-            //将字符串验证码保存到session中
-            session.setAttribute("captcha", code);
+            // 将字符串验证码保存到session中
+            session.setAttribute("captcha", captchaCode);
 
-            logger.info("session id {}， 生成的验证码 {}", session.getId(), code);
+            logger.info("session id {}， 生成的验证码 {}", session.getId(), captchaCode);
 
             //关闭流
             outputStream.close();
