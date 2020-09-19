@@ -1,0 +1,1 @@
+alter table SYS_USER add signature varchar(60) comment 'ca签名';
