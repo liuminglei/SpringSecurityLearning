@@ -21,6 +21,17 @@ Spring Security框架，说实话，比较复杂，好多人一开始不太理�
 # SpringBoot版本：
 
 * [未完待续......]
+* [史上最简单的Spring Security教程（三十五）：RememberMe记住我之更安全的实现方式-持久化token存储方式](https://blog.csdn.net/liuminglei1987/article/details/109098937)
+* [史上最简单的Spring Security教程（三十四）：用户名密码验证码（记住我）登录与CA登录融合方案](https://blog.csdn.net/liuminglei1987/article/details/109098859)
+* [史上最简单的Spring Security教程（三十三）：用户名密码登录新增验证码和RememberMe（记住我）选项](https://blog.csdn.net/liuminglei1987/article/details/109005753)
+* [史上最简单的Spring Security教程（三十二）：默认用户名密码记住我登录与CA登录融合方案](https://blog.csdn.net/liuminglei1987/article/details/109005723)
+* [史上最简单的Spring Security教程（三十一）：默认用户名密码登录新增RememberMe（记住我）选项](https://blog.csdn.net/liuminglei1987/article/details/108830717)
+* [史上最简单的Spring Security教程（三十）：自定义用户名密码及验证码登录与CA登录方式共存详细实现及配置](https://blog.csdn.net/liuminglei1987/article/details/108830683)
+* [史上最简单的Spring Security教程（二十九）：用户名密码登录添加验证码选项](https://blog.csdn.net/liuminglei1987/article/details/108706016)
+* [史上最简单的Spring Security教程（二十八）：CA登录与默认用户名密码登录共存详细实现及配置](https://blog.csdn.net/liuminglei1987/article/details/108693182)
+* [史上最简单的Spring Security教程（二十七）：AuthenticationManager默认实现之ProviderManager详解](https://blog.csdn.net/liuminglei1987/article/details/108644881)
+* [史上最简单的Spring Security教程（二十六）：DaoAuthenticationProvider详解](https://blog.csdn.net/liuminglei1987/article/details/108279836)
+* [史上最简单的Spring Security教程（二十五）：UsernamePasswordAuthenFilter详解](https://blog.csdn.net/liuminglei1987/article/details/108280067)
 * [史上最简单的Spring Security教程（二十四）：自定义用户名密码参数名及用户名密码验证路径](https://blog.csdn.net/liuminglei1987/article/details/108194357)
 * [史上最简单的Spring Security教程（二十三）：自定义AccessDecisionManager实现类选举法的访问决策](https://blog.csdn.net/liuminglei1987/article/details/108194162)
 * [史上最简单的Spring Security教程（二十二）：自定义AccessDecisionManager实现简单的访问决策](https://blog.csdn.net/liuminglei1987/article/details/108099022)
