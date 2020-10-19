@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页-史上最简单的SpringSecurity教程</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}" href="../static/css/font-awesome.min.css">
+    <style>
+        body {
+            padding-bottom: 20px;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+        <a class="navbar-brand" href="#">导航</a>
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">首页 <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user/index.html" th:href="@{/user/index}">个人中心</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">人员管理</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">权限管理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">系统配置</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown09">
+                        <a class="dropdown-item" href="#">功能菜单</a>
+                        <a class="dropdown-item" href="#">功能菜单2</a>
+                        <a class="dropdown-item" href="#">功能菜单3</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="logout_success.html" th:href="@{/logout}" class="btn btn-link"><i class="fa fa-user-circle-o"></i> 退出登录</a>
+        </div>
+    </nav>
+    <main role="main">
+        <div class="jumbotron">
+            <div class="col-sm-8 mx-auto">
+                <h1>史上最简单的SpringSecurity教程</h1>
+                <p>说起来Web应用安全，通用的方案无非 <code>Spring Security</code> 和 <code>Apache Shiro</code>。这两者我们在此不做比较，用 <code>Spring Security</code> 多，无非是因为 <code>Spring</code> 框架的“裙带关系”，当然了，也有一些其它原因，如 <code>CAS</code> 集成、<code>OAuth2</code> 集成等等，都有比较成熟的集成框架方案。</p>
+                <p><code>Spring Security</code> 框架，说实话，比较复杂，好多人一开始不太理解，只会照搬网上的答案，遇到问题解决不了。这是非常不好的习惯，技术方案一定是自己能解决的，或者说比较容易找到解决方案的，不然生产环境出问题、亦或是后续业务发展不满足等等，都会出现比较大的问题。</p>
+                <p>
+                    更多内容，请查阅 <a href="https://blog.csdn.net/liuminglei1987" role="button">@银河架构师 &raquo;</a>
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer class="blockquote-footer text-center mt-auto">
+        <div class="inner">
+            <p>源码来自于 <a href="https://gitee.com/xbd521/SpringSecurityLearning">gitee</a>、<a href="https://github.com/liuminglei/SpringSecurityLearning">github</a>， by <a href="https://blog.csdn.net/liuminglei1987">@银河架构师</a>.</p>
+        </div>
+    </footer>
+</div>
+</body>
+<script type="text/javascript" th:src="@{/js/jquery-2.1.4.min.js}" src="../static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+</html>
