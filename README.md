@@ -14,13 +14,19 @@ Spring Security框架，说实话，比较复杂，好多人一开始不太理�
 本系列源码：gitee：https://gitee.com/xbd521/SpringSecurityLearning， github：https://github.com/liuminglei/SpringSecurityLearning， 不要忘了点赞支持哦，感谢感谢！！！
 
 
-汇总文章：[史上最简单的Spring Security教程：终极篇，注意，这不是重点，不是最后一篇！！！](https://blog.csdn.net/liuminglei1987/article/details/107538666)
+汇总文章：[史上最简单的Spring Security教程：终极篇，注意，这不是终点，不是最后一篇！！！](https://blog.csdn.net/liuminglei1987/article/details/107538666)
 
 
 
 # SpringBoot版本：
 
-* [未完待续......]
+* [史上最简单的Spring Security教程（四十二）：重点，也是终点，SpringSecurity工作流程图解](https://blog.csdn.net/liuminglei1987/article/details/110130688)
+* [史上最简单的Spring Security教程（四十一）：SecurityContextHolder及SecurityContextHolderStrategy详解](https://blog.csdn.net/liuminglei1987/article/details/110130556)
+* [史上最简单的Spring Security教程（四十）：SecurityContextPersistenceFilter详解](https://blog.csdn.net/liuminglei1987/article/details/109613762)
+* [史上最简单的Spring Security教程（三十九）：ExceptionTranslationFilter自动化配置及其简介](https://blog.csdn.net/liuminglei1987/article/details/109398304)
+* [史上最简单的Spring Security教程（三十八）：ExceptionTranslationFilter详解](https://blog.csdn.net/liuminglei1987/article/details/109254062)
+* [史上最简单的Spring Security教程（三十七）：RememberMe记住我原理剖析](https://blog.csdn.net/liuminglei1987/article/details/109186955)
+* [史上最简单的Spring Security教程（三十六）：RememberMeAuthenticationFilter详解](https://blog.csdn.net/liuminglei1987/article/details/109168010)
 * [史上最简单的Spring Security教程（三十五）：RememberMe记住我之更安全的实现方式-持久化token存储方式](https://blog.csdn.net/liuminglei1987/article/details/109098937)
 * [史上最简单的Spring Security教程（三十四）：用户名密码验证码（记住我）登录与CA登录融合方案](https://blog.csdn.net/liuminglei1987/article/details/109098859)
 * [史上最简单的Spring Security教程（三十三）：用户名密码登录新增验证码和RememberMe（记住我）选项](https://blog.csdn.net/liuminglei1987/article/details/109005753)
