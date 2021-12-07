@@ -62,6 +62,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .rememberMe()
+                .key(DEFAULT_REMEMBER_ME_KEY)
                 .userDetailsService(userDetailsService())
                 .tokenValiditySeconds(14 * 24 * 60 * 60)
                 .and()
